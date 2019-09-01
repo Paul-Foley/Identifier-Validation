@@ -1,0 +1,58 @@
+<html> 
+<head><title>PPS NUMBER</title>
+<script type="text/javascript">
+
+var valid=true;
+var ppsString=prompt("Enter your PPS Number","9919274P");
+var multiplier=8;
+var total=0;
+var sum=0;
+var checksum=0;
+var checksumString=("WABCDEFGHIJKLMNOPQRSTUVXYZ");
+var checksumLetter="";
+
+
+for(i=0;i<=8;i++)
+{
+
+sum=ppsString.charAt(i);
+total=total+sum*multiplier;
+
+multiplier--
+
+if(multiplier==1)
+{
+	i=9;
+}
+
+
+
+}
+
+checksum=total%23;
+checksumLetter=checksumString.charAt(checksum);
+
+if(checksumLetter!=ppsString.charAt(7))
+{
+
+	valid=false
+
+}
+
+alert(checksumLetter);
+alert(valid);
+
+
+
+
+
+
+</script>
+</head>
+<body>
+
+
+
+</body>
+
+</html>

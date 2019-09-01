@@ -1,0 +1,63 @@
+<html>
+<head><title>EAN Checker</title></head> 
+<body>
+<div id= "text"> Welcome to the EAN Checker</div>
+</body>
+
+<script type="text/javascript">
+
+var eanNo=prompt("Enter your EAN Number", "7501031311309");
+
+var vaild = true;
+
+
+	if((eanNo==null) || (eanNo==""))
+	{
+		valid=false
+	}
+	
+	
+	if(eanNo.length!==13)
+	{
+		valid = false;
+	}
+	
+		
+		var num=0;
+		var total=0;
+
+		for(i=0;i <=10;i++)
+			{
+			 
+			 num=parseInt(eanNo.charAt(i),10);
+			 
+			 total=num+total;
+			 
+			 num=parseInt(eanNo.charAt(i+1),10);
+			 num=num*3;
+			
+			 
+			  
+			 total=num+total;
+			 i++
+			 
+			}
+			
+			num=parseInt(eanNo.charAt(12),10);
+			
+			total=num+total;
+			
+		
+		if(total % 10 == 0)
+		{
+		document.getElementById("text").innerHTML="Valid EAN 13 Number!"
+		}
+		
+		else
+		{
+		document.getElementById("text").innerHTML=" Not A Valid EAN 13 Number!"
+		}
+		
+</script>
+
+</html>

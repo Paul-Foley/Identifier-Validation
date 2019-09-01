@@ -1,0 +1,80 @@
+<html>
+<head>
+<title>Credit Card Checker</title></head>
+
+
+<body>
+<div id = "text"> Welcome To Credit Card Checker!</div>
+</body>
+
+<script type="text/javascript"/>
+
+var cardNumber= prompt("Enter Credit Card Number", "4111111111111111");
+var valid=true;
+
+
+if((cardNumber==null) || (cardNumber==""));
+{
+  valid=false;
+}
+if(cardNumber.length!==16)
+{
+	valid=false;
+}
+
+//if(cardNumber.slice(0,1)!="4")
+//{
+//	valid=false;
+//}
+
+
+	var loop=cardNumber.length-1;
+	var checker=false;
+	var total=0;
+	total=0;
+	var num=0;
+	
+	while(loop>=0)
+	
+	{
+		
+	num=parseInt(cardNumber.charAt(loop),10);
+	
+	
+	if(checker==true)
+	{
+	num=num*2;
+	
+		if(num>9)
+		{
+			num=num-9;
+		}
+	}
+	
+	checker=!checker;
+	
+	loop--
+	
+	total=total+num;
+	
+	}
+	
+	
+	if(total % 10 == 0)
+	{
+	
+		document.getElementById("text").innerHTML = "This is a Valid Visa";
+	
+	}
+	
+	else
+	{
+	
+		document.getElementById("text").innerHTML = "This is not a valid Visa";
+	
+	}
+
+
+</script>
+</html>
+
